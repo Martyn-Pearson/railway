@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'storage/style.css' %}">
+        <title>Storage Status</title>
+    </head>
+    <body>
+        <div class="maindiv">
+        {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

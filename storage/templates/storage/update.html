@@ -1,0 +1,17 @@
+{% extends "storage/base.html" %}
+
+{% block content %}
+<h1>Add train to {{ location }} ({{ direction }}) </h1>
+<form action="{% url 'storage:update' location.id %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="direction" value="{{direction}}" />
+    <table class="addtable">
+    {% for train in trains %}
+        <tr>
+        <td>{{ train }}</td>
+        <td><input type="submit" value="Add" name="Add_{{train.id}}"/></td>
+        </tr>
+    {% endfor %}
+    </table>
+</form>
+{% endblock %}
